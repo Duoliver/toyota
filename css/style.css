@@ -1,0 +1,11 @@
+.sidenav, nav, h1, h2, h3, h4, h5 {
+    font-family: 'Oswald';
+}
+nav {
+    background-color: #EB091E;
+    margin-bottom: 1em;
+}
+nav .brand-logo, nav img {
+    height: 100%;
+    width: auto;
+}
