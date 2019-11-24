@@ -5,7 +5,53 @@ nav {
     background-color: #EB091E;
     margin-bottom: 1em;
 }
-nav .brand-logo, nav img {
+
+nav .container {
+    height: 100%;
+}
+.brand-logo, .brand-logo img {
     height: 100%;
     width: auto;
+}
+
+p {
+    text-align: justify;
+    color: #555;
+    margin: 0 1em;
+}
+
+.call-to-action {
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.btn-large {
+    background-color: #EB091E;
+}
+.btn-large:hover {
+    background-color: #f44336 
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    background-color: #EB091E;
+}
+
+footer img {
+    height: 70%;
+}
+
+footer a{
+    color: #fff;
+    font-size: 1em;
 }
