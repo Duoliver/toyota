@@ -1,3 +1,7 @@
+body {
+    min-height: 100%;
+}
+
 .sidenav, nav, h1, h2, h3, h4, h5 {
     font-family: 'Oswald';
 }
@@ -12,6 +16,10 @@ nav .container {
 .brand-logo, .brand-logo img {
     height: 100%;
     width: auto;
+}
+
+.carousel {
+    height: auto;
 }
 
 p {
@@ -38,6 +46,33 @@ p {
     background-color: #f44336 
 }
 
+.material-icons.active,
+input.active {
+    color: #f44336;
+}
+
+form .row {
+    margin-bottom: 0;
+}
+
+.radio p {
+    margin-bottom: .5em;
+}
+.radio-title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.radio-title {
+    font-size: 14px;
+    margin-left: .5em;
+}
+
+button {
+    float: right;
+    margin-right: 1em;
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -45,13 +80,14 @@ footer {
     justify-content: center;
     height: 25vh;
     background-color: #EB091E;
+    margin-top: 2em;
 }
 
 footer img {
     height: 70%;
 }
 
-footer a{
+footer a {
     color: #fff;
     font-size: 1em;
 }
