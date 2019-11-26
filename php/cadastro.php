@@ -38,6 +38,13 @@
         <h1>PROMOÇÃO HILUX DE NATAL 2019</h1>
         <br>
 
+        <?php
+            if (isset ($_GET['retorno'])) {
+                $msg = $_GET['retorno'];
+                echo '<h2 class="green-text" style="text-align: center" >'.$msg.'</h2>';
+            }
+        ?>
+        
         <h4>CADASTRO</h4>
         <form action="crud/cadastrar_cadastro.php" method="POST">
             <div class="row">
@@ -111,12 +118,7 @@
                 </button>
             </div>
         </form>
-        <?php
-        if (isset ($_GET['retorno'])) {
-            $msg = $_GET['retorno'];
-            echo '<h2 class="green-text" style="text-align: center" >'.$msg.'</h2>';
-        }
-    ?>
+        
     </div>
     <footer class="z-depth-1">
         <img src="../img/logo.png">
