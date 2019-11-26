@@ -12,10 +12,8 @@
 
     if ($carro == 'true') {
         $sql= "insert into toyota.cadastro (nome_cli, telefone, email, ender, carro, marca, modelo, ano) values ('$nome_cli', '$telefone', '$email', '$ender', $carro, '$marca', '$modelo', $ano);";
-        echo "TEU PAI É CORNO";
     } else {
         $sql= "insert into toyota.cadastro (nome_cli, telefone, email, ender, carro) values ('$nome_cli', '$telefone', '$email', '$ender', $carro);";
-        echo "PENIS";
     }
 
     echo "insert into toyota.cadastro (nome_cli, telefone, email, ender, carro, marca, modelo, ano) values ('$nome_cli', '$telefone', '$email', '$ender', $carro, '$marca', '$modelo', $ano);";
