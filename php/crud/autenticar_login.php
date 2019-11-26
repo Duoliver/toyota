@@ -22,7 +22,7 @@
         if ($num > 0) {
             session_start();
             $_SESSION['login'] = 'ok';
-            header("location: ../dashboard.php");
+            header("location: ../cadastros.php");
         } else {
             $msg = urlencode('Dados invalidos!');
             header("location: ../login.php?retorno=$msg");
