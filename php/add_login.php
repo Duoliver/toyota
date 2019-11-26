@@ -79,7 +79,7 @@
         <?php
             if (isset ($_GET['retorno'])) {
                 $msg = $_GET['retorno'];
-                echo '<h2 class="red-text" style="text-align: center" >'.$msg.'</h2>';
+                echo '<h2 class="green-text" style="text-align: center" >'.$msg.'</h2>';
             }
         ?>
         
