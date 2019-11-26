@@ -26,9 +26,8 @@
                     <li><a href="add_login.php">ADICIONAR LOGIN</a></li>
                     <li><a href="editar_login.php">EDITAR LOGIN</a></li>
                     <li><a href="excluir_login.php">EXCLUIR LOGIN</a></li>
-                    <li><a href="pesquisa.php">PESQUISA</a></li>
                     <li><a href="relatorio.php">RELATÓRIO</a></li>
-                    <li><a href="relatorio.php">LOGOUT</a></li>
+                    <li><a href="logout.php">LOGOUT</a></li>
                 </ul>
             </div>
         </div>
@@ -38,9 +37,8 @@
         <li><a href="add_login.php">ADICIONAR LOGIN</a></li>
         <li><a href="editar_login.php">EDITAR LOGIN</a></li>
         <li><a href="excluir_login.php">EXCLUIR LOGIN</a></li>
-        <li><a href="pesquisa.php">PESQUISA</a></li>
         <li><a href="relatorio.php">RELATÓRIO</a></li>
-        <li><a href="relatorio.php">LOGOUT</a></li>
+        <li><a href="logout.php">LOGOUT</a></li>
     </ul>
 
     <div class="container">
@@ -68,15 +66,15 @@
                     $res=mysqli_query($conexao,$sql) or die (mysqli_connect_error());    
 
                     while ($linha = mysqli_fetch_row($res)) {
-                        $cod=$linha[0];
-                        $telefone=$linha[1];
-                        $nome=$linha[2];
-                        $email=$linha[3];
-                        $ender=$linha[4];
-                        $carro=$linha[5];
-                        $marca=$linha[6];
-                        $modelo=$linha[7];
-                        $ano=$linha[8];
+                        $cod =      $linha[0];
+                        $telefone = $linha[1];
+                        $nome =     $linha[2];
+                        $email =    $linha[3];
+                        $ender =    $linha[4];
+                        $carro =    $linha[5];
+                        $marca =    $linha[6];
+                        $modelo =   $linha[7];
+                        $ano =      $linha[8];
 
                         if($carro == 1) {
                             $carro = $ano.' '.$marca.' '.$modelo;
