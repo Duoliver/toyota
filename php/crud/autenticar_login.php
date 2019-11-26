@@ -9,8 +9,8 @@
 
         $data_old = explode("/", $data_old);
         $ano = $data_old[2];
-        $mes = $data_old[0];
-        $dia = $data_old[1];
+        $mes = $data_old[1];
+        $dia = $data_old[0];
         $data = $ano."-".$mes."-".$dia;
 
 

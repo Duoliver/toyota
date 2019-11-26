@@ -90,7 +90,9 @@
         });
 
         $( function() {
-            $( "#datepicker" ).datepicker();
+            $( "#datepicker" ).datepicker({
+                dateFormat: 'dd/mm/yy'
+            });
         } );
 
     </script>
