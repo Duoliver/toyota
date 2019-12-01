@@ -6,6 +6,6 @@
     $sql="delete from toyota.cadastro where cod_cli=$codigo;";
     mysqli_query($conexao,$sql);
     //voltar para formulario de atualização e Mostrar msg
-    $msg= $sql;
+    $msg= "Cadastro excluído";
     header ("location: ../cadastros.php?retorno=$msg");
 ?>

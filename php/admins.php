@@ -26,6 +26,12 @@
         <br>
 
         <h4>CADASTROS</h4>
+        <?php
+            if (isset ($_GET['retorno'])) {
+                $msg = $_GET['retorno'];
+                echo '<h2 class="green-text" style="text-align: center" >'.$msg.'</h2>';
+            }
+        ?>
         <table class="highlight responsive-table">
             <thead>
                 <tr>
@@ -37,12 +43,13 @@
             <tbody>
                 <?php
                     require_once('crud/conectar.php');
-                    $sql="select usuario, date_format(data, '%d/%m/%Y') from login order by usuario asc;";
+                    $sql="select usuario, date_format(data, '%d/%m/%Y'), senha from login order by usuario asc;";
                     $res=mysqli_query($conexao,$sql) or die (mysqli_connect_error());    
 
                     while ($linha = mysqli_fetch_row($res)) {
                         $usuario = $linha[0];
                         $data    = $linha[1];
+                        $senha   = $linha[2];
 
                         echo "
                             <tr>
@@ -50,10 +57,14 @@
                                 <td>$data</td>
                                 <td>
                                     <div style='display: flex; justify-content: space-between; align-items: center'>
-                                        <a href='edit_login.php'><i class='material-icons'>create</i></a>
+                                        <a href='edit_login.php?usuario={$usuario}&&data={$data}&&senha={$senha}'>
+                                            <i class='material-icons'>create</i>
+                                        </a>
                                         <form action='crud/excluir_login.php' method='POST'>
                                             <input type='hidden' name='usuario' value='$usuario'>
-                                            <button class='btn-flat'><i style='font-size: 24px' class='material-icons'>delete_forever</i></button>
+                                            <button class='btn-flat'>
+                                                <i style='font-size: 24px' class='material-icons'>delete_forever</i>
+                                            </button>
                                         </form>
                                     </div>
                                 </td>
