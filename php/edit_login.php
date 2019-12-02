@@ -35,7 +35,7 @@
                     <label for="usuario">Login</label>
                 </div>
                 <div class="input-field col s12 m6">
-                    <i class="material-icons prefix">chevron_right</i>
+                    <i class="material-icons prefix">vpn_key</i>
                     <input id="senha" type="password" name="senha" value="<?php echo $_GET['senha']?>" class="validate">
                     <label for="senha">Senha</label>
                 </div>
