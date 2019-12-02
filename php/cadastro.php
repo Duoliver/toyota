@@ -131,19 +131,22 @@
         $(document).ready(function () {
             $('.sidenav').sidenav();
 
-            $('form input[id="marca"]').prop("disabled", true);
-            $('form input[id="ano"]').prop("disabled", true);
-            $('form input[id="modelo"]').prop("disabled", true);
+            function setCarInput(state) {
+                $('form input[id="marca"]').prop("disabled", state);
+                $('form input[id="ano"]').prop("disabled", state);
+                $('form input[id="modelo"]').prop("disabled", state);
+            }
+
+            setCarInput(true);
+
+            //'.radio p label input' goes to radio buttons asking about a car ownership
             $(".radio p label input").click(function(){
-                console.log('clicou')
                 if($('#possui_carro').prop("checked") == true){
-                    $('form input[id="marca"]').prop("disabled", false);
-                    $('form input[id="ano"]').prop("disabled", false);
-                    $('form input[id="modelo"]').prop("disabled", false);                }
+                    setCarInput(false);
+                }
                 else if($('#possui_carro').prop("checked") == false){
-                    $('form input[id="marca"]').prop("disabled", true);
-                    $('form input[id="ano"]').prop("disabled", true);
-                    $('form input[id="modelo"]').prop("disabled", true);                }
+                    setCarInput(true);
+                }
             });
         });
 
