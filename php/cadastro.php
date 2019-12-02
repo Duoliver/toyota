@@ -87,7 +87,7 @@
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="carro" value="true" type="radio"/>
+                            <input class="with-gap" id="possui_carro" name="carro" value="true" type="radio"/>
                             <span class="radio-button">Sim</span>
                         </label>
                     </p>
@@ -100,14 +100,12 @@
                             <label for="marca">Marca</label>
                         </div>
                         <div class="input-field col s12 m12 l6">
-                            <i class="material-icons prefix"></i>
                             <input type="number" id="ano" name="ano" class="validate">
-                            <label for="marca">Ano</label>
+                            <label for="ano">Ano</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="material-icons prefix"></i>
                             <input type="text" id="modelo" name="modelo" class="validate">
                             <label for="modelo">Modelo</label>
                         </div>
@@ -132,7 +130,23 @@
 
         $(document).ready(function () {
             $('.sidenav').sidenav();
+
+            $('form input[id="marca"]').prop("disabled", true);
+            $('form input[id="ano"]').prop("disabled", true);
+            $('form input[id="modelo"]').prop("disabled", true);
+            $(".radio p label input").click(function(){
+                console.log('clicou')
+                if($('#possui_carro').prop("checked") == true){
+                    $('form input[id="marca"]').prop("disabled", false);
+                    $('form input[id="ano"]').prop("disabled", false);
+                    $('form input[id="modelo"]').prop("disabled", false);                }
+                else if($('#possui_carro').prop("checked") == false){
+                    $('form input[id="marca"]').prop("disabled", true);
+                    $('form input[id="ano"]').prop("disabled", true);
+                    $('form input[id="modelo"]').prop("disabled", true);                }
+            });
         });
+
 
     </script>
 </body>
