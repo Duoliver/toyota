@@ -68,81 +68,84 @@
                     </button>
                 </div>
             </div>
-        </form>
-        <div>  
-            <table class="highlight responsive-table">
-                <thead>
-                    <tr>
-                        <th><i class="material-icons">backup</i></th>
-                        <th><i class="material-icons">account_circle</i></th>
-                        <th><i class="material-icons">phone</i></th>
-                        <th><i class="material-icons">email</i></th>
-                        <th><i class="material-icons">location_on</i></th>
-                        <th><i class="material-icons">directions_car</i></th>
-                        <th><i class="material-icons">menu</i></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        require_once('crud/conectar.php');
-                        if (isset($_GET['filtro'])){
-                            switch($_GET['filtro']){
-                                case "1":
-                                    $sql="select * from cadastro order by cod_cli desc";
-                                    break;
-                                case "2":
-                                    $sql="select * from cadastro where carro = 0 order by cod_cli desc";
-                                    break;
-                                case "3":
-                                    $sql="select * from cadastro where carro = 1 and marca = 'toyota' order by cod_cli desc";
-                                    break;
-                                case "4":
-                                    $telefone = $_GET['telefone'];
-                                    $sql="select * from cadastro where telefone = '$telefone' order by cod_cli desc";
-                            }
+        </form> 
+        <table class="highlight responsive-table">
+            <thead>
+                <tr>
+                    <th><i class="material-icons">backup</i></th>
+                    <th><i class="material-icons">account_circle</i></th>
+                    <th><i class="material-icons">phone</i></th>
+                    <th><i class="material-icons">email</i></th>
+                    <th><i class="material-icons">location_on</i></th>
+                    <th><i class="material-icons">directions_car</i></th>
+                    <th><i class="material-icons">menu</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    require_once('crud/conectar.php');
+                    if (isset($_GET['filtro'])){
+                        switch($_GET['filtro']){
+                            case "1":
+                                $sql="select * from cadastro order by cod_cli desc";
+                                break;
+                            case "2":
+                                $sql="select * from cadastro where carro = 0 order by cod_cli desc";
+                                break;
+                            case "3":
+                                $sql="select * from cadastro where carro = 1 and marca = 'toyota' order by cod_cli desc";
+                                break;
+                            case "4":
+                                $telefone = $_GET['telefone'];
+                                $sql="select * from cadastro where telefone = '$telefone' order by cod_cli desc";
+                        }
+                    } else {
+                        $sql="select * from cadastro order by cod_cli desc";
+                    }
+                    $res=mysqli_query($conexao,$sql) or die (mysqli_connect_error());    
+
+                    while ($linha = mysqli_fetch_row($res)) {
+                        $cod =      $linha[0];
+                        $telefone = $linha[1];
+                        $nome =     $linha[2];
+                        $email =    $linha[3];
+                        $ender =    $linha[4];
+                        $carro =    $linha[5];
+                        $marca =    $linha[6];
+                        $modelo =   $linha[7];
+                        $ano =      $linha[8];
+
+                        if($carro == 1) {
+                            $carro = $ano.' '.$marca.' '.$modelo;
                         } else {
-                            $sql="select * from cadastro order by cod_cli desc";
+                            $carro = 'Não possui';
                         }
-                        $res=mysqli_query($conexao,$sql) or die (mysqli_connect_error());    
-    
-                        while ($linha = mysqli_fetch_row($res)) {
-                            $cod =      $linha[0];
-                            $telefone = $linha[1];
-                            $nome =     $linha[2];
-                            $email =    $linha[3];
-                            $ender =    $linha[4];
-                            $carro =    $linha[5];
-                            $marca =    $linha[6];
-                            $modelo =   $linha[7];
-                            $ano =      $linha[8];
-    
-                            if($carro == 1) {
-                                $carro = $ano.' '.$marca.' '.$modelo;
-                            } else {
-                                $carro = 'Não possui';
-                            }
-    
-                            echo "
-                                <tr>
-                                    <td>$cod</td>
-                                    <td>$nome</td>
-                                    <td>$telefone</td>
-                                    <td>$email</td>
-                                    <td>$ender</td>
-                                    <td>$carro</td>
-                                    <td>
-                                        <form action='crud/excluir_cadastro.php' method='POST'>
-                                            <input type='hidden' name='codigo' value=$cod>
-                                            <button class='btn-flat'><i class='material-icons'>delete_forever</i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            ";
-                        }
-                    ?> 
-                </tbody>
-            </table>  
-        </div>
+
+                        echo "
+                            <tr>
+                                <td>$cod</td>
+                                <td>$nome</td>
+                                <td>$telefone</td>
+                                <td>$email</td>
+                                <td>$ender</td>
+                                <td>$carro</td>
+                                <td>
+                                    <form action='crud/excluir_cadastro.php' method='POST'>
+                                        <input type='hidden' name='codigo' value=$cod>
+                                        <button class='btn-flat'><i class='material-icons'>delete_forever</i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        ";
+                    }
+                    echo "
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                    ";
+                ?> 
+            </tbody>
+        </table> 
     </div>
     <footer class="z-depth-1">
         <img src="../img/logo.png">
