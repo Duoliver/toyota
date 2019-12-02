@@ -50,6 +50,12 @@ a {
     background-color: #f44336 
 }
 
+.btn.search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .material-icons.active,
 input.active {
     color: #f44336;
