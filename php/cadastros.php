@@ -28,7 +28,7 @@
         <h4>CADASTROS</h4>
         <form action="crud/pesquisar_cadastro.php" method="POST">
             <div class="row">
-                 <div class="input-field col search" style="display: flex;">
+                 <div class="input-field col search">
                     <div class="radio-title-wrapper">
                         <label class="radio-title"><b>Pesquisar por</b></label>
                     </div>
