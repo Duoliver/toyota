@@ -131,21 +131,21 @@
         $(document).ready(function () {
             $('.sidenav').sidenav();
 
-            function setCarInput(state) {
+            function setDisabledInput(state) {
                 $('form input[id="marca"]').prop("disabled", state);
                 $('form input[id="ano"]').prop("disabled", state);
                 $('form input[id="modelo"]').prop("disabled", state);
             }
 
-            setCarInput(true);
+            setDisabledInput(true);
 
             //'.radio p label input' goes to radio buttons asking about a car ownership
             $(".radio p label input").click(function(){
                 if($('#possui_carro').prop("checked") == true){
-                    setCarInput(false);
+                    setDisabledInput(false);
                 }
                 else if($('#possui_carro').prop("checked") == false){
-                    setCarInput(true);
+                    setDisabledInput(true);
                 }
             });
         });
