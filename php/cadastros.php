@@ -63,8 +63,8 @@
                     <input type="text" name="telefone" placeholder="Telefone">
                 </div>
                 <div class="col s4 m2 l1">
-                    <button class="btn waves-effect waves-light">
-                        <i class="material-icons right">search</i>
+                    <button class="btn waves-effect waves-light search">
+                        <i class="material-icons">search</i>
                     </button>
                 </div>
             </div>
