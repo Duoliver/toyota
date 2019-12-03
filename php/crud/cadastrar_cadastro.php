@@ -1,5 +1,6 @@
 <?php
     require_once('conectar.php');
+    require_once('verificar_sessao.php');
 
     $nome_cli = $_POST['nome_cli'];
     $telefone = $_POST['telefone'];

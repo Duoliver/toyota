@@ -1,5 +1,7 @@
 <?php
     require_once('conectar.php');
+    require_once('verificar_sessao.php');
+    
     $filtro = $_POST['filtro'];
     $telefone = $_POST['telefone'];
 

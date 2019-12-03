@@ -1,5 +1,7 @@
 <?php
     require_once ('conectar.php');
+    require_once('verificar_sessao.php');
+    
     $codigo = $_POST['codigo'];
 
     //montar SQL para atualizar registro

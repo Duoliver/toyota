@@ -1,5 +1,6 @@
 <?php
     require_once('conectar.php');
+    require_once('verificar_sessao.php');
 
     $usuario = $_POST['login'];
     $senha = $_POST['senha'];

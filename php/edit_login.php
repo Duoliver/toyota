@@ -19,6 +19,7 @@
 <body>
 
     <?php
+        require_once('crud/verificar_sessao.php');
         require('navbar_dashboard.php');
     ?>
 
